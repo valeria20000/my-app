@@ -7,6 +7,8 @@ import { FrutaComponent } from './fruta/fruta.component';
 import { ClaseComponent } from './clase/clase.component';
 import { FlujoInformacionComponent } from './flujo-informacion/flujo-informacion.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { Page404Component } from './components/page404/page404.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     FrutaComponent,
     ClaseComponent,
-    FlujoInformacionComponent
+    FlujoInformacionComponent,
+    HomeComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
