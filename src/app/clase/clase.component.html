@@ -1,0 +1,12 @@
+<p>
+  Componenge generado con el siquiente comando</p> 
+  <p><code>ng generate component alumnos {{titulo}}</code></p>
+  <code>ng g c alumnos {{titulo}}</code>
+  <p>*recordar declararlo en app.module.ts</p>
+  
+  <h3>Listado de alumnos</h3>
+  <p>Usamos la directiva +ngFor para iterar sibre el array de alumnos</p>
+  <ol>
+  <li *ngFor= "let a of alumnos">{{a}}</li>
+  </ol>
+  
