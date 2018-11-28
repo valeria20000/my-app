@@ -13,6 +13,7 @@ import { VideojuegoDetalleComponent } from './components/videojuego-detalle/vide
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ComponentsComponent } from './components/components.component';
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
+import { PersonaPipe } from './pipes/persona.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
     VideojuegoDetalleComponent,
     PipeComponent,
     ComponentsComponent,
-    VideojuegoPipe
+    VideojuegoPipe,
+    PersonaPipe
   ],
   imports: [
     BrowserModule,
