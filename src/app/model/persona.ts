@@ -14,7 +14,6 @@ export class Persona {
     
     private _sexo: tipopersona;
     
-   
 
     constructor(){
         this._nombre = 'Aninimo';

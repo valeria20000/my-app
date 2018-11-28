@@ -12,6 +12,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ComponentsComponent } from './components/components.component';
+import { VideojuegoPipe } from './pipes/videojuego.pipe';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ComponentsComponent } from './components/components.component';
     Page404Component,
     VideojuegoDetalleComponent,
     PipeComponent,
-    ComponentsComponent
+    ComponentsComponent,
+    VideojuegoPipe
   ],
   imports: [
     BrowserModule,
