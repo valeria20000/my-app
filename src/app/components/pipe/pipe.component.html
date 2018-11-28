@@ -59,3 +59,35 @@
 </div>
 
 
+<div class="row">
+    <div class="col">
+      <h4>Lista Personas</h4>
+      <ol>
+        <li *ngFor="let p of personas ">{{ p.nombre }} - {{p.apellidos}} - {{p.edad}} - {{p.email}} </li>
+      </ol>
+    </div>
+    <div class="col">
+      <h4>  Listado Mujeres </h4>
+          <ol>
+              <li *ngFor="let p of personas | sexo:'femenino'">{{ p.nombre }} - {{p.apellidos}} - {{p.edad}} - {{p.email}} </li>
+            </ol>
+   
+    </div>
+    <div class="col">
+      <h4>Lsitado Hombres</h4>
+      <ol>
+          <li *ngFor="let p of personas | sexo:'masculino' ">{{ p.nombre }} - {{p.apellidos}} - {{p.edad}} - {{p.email}} </li>
+        </ol>
+    
+    </div>
+
+    <div class="col">
+        <h4>Lsitado Indeterminados</h4>
+        <ol>
+            <li *ngFor="let p of personas | sexo:'indefinido' ">{{ p.nombre }} - {{p.apellidos}} - {{p.edad}} - {{p.email}} </li>
+          </ol>
+      
+      </div>
+  </div>
+
+

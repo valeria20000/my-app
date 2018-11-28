@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { tipopersona } from '../model/tipopersona';
+import { Persona } from '../model/persona';
 
 
 
@@ -9,8 +10,15 @@ import { tipopersona } from '../model/tipopersona';
 })
 export class PersonaPipe implements PipeTransform {
 
-  transform(tipopersona: tipopersona, sexo: any): any {
-    return null;
+  transform(personas: Persona[], sexo: tipopersona): any {
+    const resul: Persona[] = [];
+
+    personas.forEach(el => {
+      if(el.sexo === sexo){
+        resul.push(el);
+      }
+    });
+    return resul;
   }
 
 }
