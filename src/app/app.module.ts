@@ -9,6 +9,9 @@ import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
+import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { ComponentsComponent } from './components/components.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { Page404Component } from './components/page404/page404.component';
     ClaseComponent,
     FlujoInformacionComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    VideojuegoDetalleComponent,
+    PipeComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,
