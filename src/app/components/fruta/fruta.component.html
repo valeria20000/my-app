@@ -3,10 +3,13 @@
     <section class="jumbotron text-center">
         <div class="container">
 
-                <app-fruta-card></app-fruta-card>
+       
+               
+
             <div class="row">
-                <h4>Datos con pipes JSON</h4>
-                {{ frutas | json }}
+              <div class="col" *ngFor="let fruta of frutas">
+                  <app-fruta-card [_fruta]= "fruta"></app-fruta-card>
+              </div>
               </div>
 
 
@@ -32,7 +35,7 @@
                     <li>{{ frutaPrimeraOferta.nombre }}</li>
                   <ol>
                     <h4>Futa Primera Color</h4>
-                    <!--<li>{{ frutaPrimeraColor.nombre }}</li>-->
+                    <li>{{ frutaPrimeraColor.nombre }}</li>
 
                   </ol>
                 </div>

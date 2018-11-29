@@ -51,6 +51,8 @@ this.frutaPrimeraColor = this.frutas.find(f => f.oferta &&( f.color.find(c => c 
     f.calorias = 500;
     f.color = ['amarillo', 'negro'];
     f.oferta = true;
+    f.descuento = 20;
+    f.img='https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg';
     this.frutas.push(f);
 
     f = new Fruta();
@@ -59,6 +61,8 @@ this.frutaPrimeraColor = this.frutas.find(f => f.oferta &&( f.color.find(c => c 
     f.calorias = 350;
     f.color = ['amarillo', 'verde'];
     f.oferta = false;
+    f.descuento = 10;
+    f.img = 'http://www.haciendasbio.com/63-large_default/peras.jpg';
     this.frutas.push(f);
 
     f = new Fruta();
@@ -66,7 +70,9 @@ this.frutaPrimeraColor = this.frutas.find(f => f.oferta &&( f.color.find(c => c 
     f.precio = 0.75;
     f.calorias = 100;
     f.color = ['rosa', 'rojo', 'verde'];
-    f.oferta = false;
+    f.oferta = true;
+    f.descuento = 5;
+    f.img = 'https://www.specialfruit.com/es/thumbnail/productFull/product-1456739596/fresa-calinda.jpg';
     this.frutas.push(f);
 
 

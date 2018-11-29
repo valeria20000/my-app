@@ -11,12 +11,14 @@ import { ClaseComponent } from './components/clase/clase.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-fruta.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
 const routes: Routes = [
 { path: 'home', component: HomeComponent},
 { path: 'fruta', component: FrutaComponent},
 { path: 'clase', component: ClaseComponent},
 { path: 'pipe', component: PipeComponent},
+{ path: 'comparador', component: ComparadorComponent},
 { path: 'array', component: EjercicioFrutaComponent},
 { path: 'videojuego-detalle', component: VideojuegoDetalleComponent},
 { path: '', redirectTo: '/home', pathMatch: 'full'},
