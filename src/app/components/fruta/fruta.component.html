@@ -2,16 +2,41 @@
 <main role="main">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Fruta Components</h1>
-            <p class="lead text-muted">Componente generado con el siquiente comando</p>
-            <p><code>ng generate component fruta {{titulo}}</code></p>
-            <code>ng g c fruta {{titulo}}</code>
-            <p>*recordar declararlo en app.module.ts</p>
-            <h3 class="font-italic">Listado de frutas</h3>
-            <p class="lead text-muted">Usamos la directiva +ngFor para iterar sibre el array de frutas</p>
-            <ol>
-                    <li *ngFor="let f of frutas">{{f}}</li>
-            </ol>
+
+                <app-fruta-card></app-fruta-card>
+            <div class="row">
+                <h4>Datos con pipes JSON</h4>
+                {{ frutas | json }}
+              </div>
+
+
+              <div class="row">
+                <div class="col">
+                        <h4>Precio total</h4>
+                        <ol>
+                        <li>{{preciototal}}</li>
+                        </ol>
+                        <h4>Nombre Frutas</h4>
+                        <ol>
+                        <li>{{nombrefrutas}}</li>
+                        </ol>
+                        <h4>Frutas Oferta</h4>
+                        <ol>
+                        <li>{{frutasoferta}}</li>
+                        </ol>
+                  <h4>Lista Frutas</h4>
+                  <ol>
+                    <li *ngFor="let f of frutas ">{{ f.nombre }}</li>
+                  </ol>
+                  <h4>Futa Primera Oferta</h4>
+                    <li>{{ frutaPrimeraOferta.nombre }}</li>
+                  <ol>
+                    <h4>Futa Primera Color</h4>
+                    <!--<li>{{ frutaPrimeraColor.nombre }}</li>-->
+
+                  </ol>
+                </div>
+              </div>
         </div>
             
     </section>

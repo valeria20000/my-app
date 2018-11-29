@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+//Componentes propios
 import { AppComponent } from './app.component';
 import { FrutaComponent } from './components/fruta/fruta.component';
 import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
@@ -8,12 +10,14 @@ import { Page404Component } from './components/page404/page404.component';
 import { ClaseComponent } from './components/clase/clase.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-fruta.component';
 
 const routes: Routes = [
 { path: 'home', component: HomeComponent},
 { path: 'fruta', component: FrutaComponent},
 { path: 'clase', component: ClaseComponent},
 { path: 'pipe', component: PipeComponent},
+{ path: 'array', component: EjercicioFrutaComponent},
 { path: 'videojuego-detalle', component: VideojuegoDetalleComponent},
 { path: '', redirectTo: '/home', pathMatch: 'full'},
 { path: 'flujo', component: FlujoInformacionComponent},
