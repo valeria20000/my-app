@@ -1,16 +1,40 @@
 
 <main role="main">
-    <section class="jumbotron text-center">
+    <section class="jumbotron ">
         <div class="container">
-
-       
-               
-
+            <h3 class="display-5 font-italic text-center">Cards</h3>
             <div class="row">
               <div class="col" *ngFor="let fruta of frutas">
                   <app-fruta-card [_fruta]= "fruta"></app-fruta-card>
               </div>
               </div>
+
+              <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark mt-4 ">
+                  <div class="col px-0">
+                      <h3 class="display-5 font-italic">Ejercicios de frutas</h3>
+                      <p class="lead my-9"> <a href="http://www.campus.formacion.ipartek.com/moodle/mod/page/view.php?id=1254" target="_blank">Teoria Programación Funcional con Arrays</a></p>
+                      <ol>
+                          <li>Traducir json de frutas en un objeto</li>
+                          <li>Sacar por pantalla las frutas</li>
+                          <li>Guardar en una variable el precio total de todas las frutas</li>
+                          <li>Crear un array solo con los nombres (Array de strings)</li>
+                          <li>Conseguir array solo con las frutas en oferta</li>
+                          <li>Conseguir array solo con las frutas de color rojo</li>
+                          <li>Conseguir primera fruta en oferta</li>
+                          <li>Conseguir primera fruta en oferta de color verde </li>
+                        </ol>
+                        <h5>1. Traducir json de frutas en un objeto</h5>
+                        <p class="text-success">{{ frutas | json }}</p>
+                        <h5>2. Sacar por pantalla las frutas</h5>
+                        <ol class="text-success">
+                            <li *ngFor="let f of frutas ">{{ f.nombre }}</li>
+                        </ol>
+                       <h5>3. Guardar en una variable el precio total de todas las frutas</h5>
+                          <p class="text-success">Precio Total : {{preciototal}} € </p>
+      
+    
+                  </div>
+                </div>
 
 
               <div class="row">

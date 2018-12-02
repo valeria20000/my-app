@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ejercicio-fruta.component.scss']
 })
 export class EjercicioFrutaComponent implements OnInit {
+   // Atributos declarar y no inicializar
+   titulo: string;
+   frutas: string[];
 
-  constructor() { }
+  constructor() {
+    
+    console.trace('FrutaComponent constructor');
+    this.titulo = 'fruta';
+    this.frutas = ['fresa', 'platano', 'mango', 'kiwi'];
+  }
 
   ngOnInit() {
+    console.trace('FrutaComponent ngOnInit');
   }
 
 }
+

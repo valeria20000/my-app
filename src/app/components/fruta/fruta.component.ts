@@ -72,7 +72,7 @@ this.frutaPrimeraColor = this.frutas.find(f => f.oferta &&( f.color.find(c => c 
     f.color = ['rosa', 'rojo', 'verde'];
     f.oferta = true;
     f.descuento = 5;
-    f.img = 'https://www.specialfruit.com/es/thumbnail/productFull/product-1456739596/fresa-calinda.jpg';
+    f.img = 'http://asipasa.com/media/i/17d1b48e-554a-11e2-8fa7-3c4a92dfe5a8.jpg';
     this.frutas.push(f);
 
 
