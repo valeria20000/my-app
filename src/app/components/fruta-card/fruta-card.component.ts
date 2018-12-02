@@ -7,20 +7,30 @@ import { Fruta } from 'src/app/model/fruta';
   styleUrls: ['./fruta-card.component.scss']
 })
 export class FrutaCardComponent implements OnInit {
-  @Input() private _fruta: Fruta;
-  
-  public get fruta(): Fruta {
-    return this._fruta;
-  }
-  public set fruta(value: Fruta) {
-    if(this._fruta){
+   _fruta: Fruta;
+   _fruta2?: Fruta; // ? opcional
+
+   @Input('_fruta') set fruta(value: Fruta) {
+    if (value) {
       this._fruta = value;
-    }else{
+    } else {
+      console.debug('fruta undefined => new Fruta()');
       this._fruta = new Fruta();
     }
   }
 
-  //fruta: Fruta;
+
+   get fruta(): Fruta {
+    return this._fruta;
+  }
+
+  @Input('_fruta2') set fruta2 (value: Fruta) {
+    this._fruta2 = value;
+  }
+
+  get fruta2(): Fruta {
+    return this._fruta2;
+  }
 
 
   constructor() {

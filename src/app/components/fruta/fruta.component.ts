@@ -17,6 +17,7 @@ export class FrutaComponent implements OnInit {
   frutasoferta: Fruta[];
   frutaPrimeraOferta: Fruta;
   frutaPrimeraColor: Fruta;
+  frutasColorRojo: Fruta[];
 
 
   constructor() {
@@ -27,6 +28,7 @@ export class FrutaComponent implements OnInit {
     
     //cojer mas dde un valor {el.precio; }
 //si es mas de una sentencia   
+this.frutasColorRojo = this.frutas.filter(el => el.color.find(c => c === 'rojo'));
 this.preciototal = this.frutas.map( f => f.precio).reduce((c, p) => c + p);
 this.nombrefrutas = this.frutas.map(el => el.nombre);
 this.frutasoferta = this.frutas.filter(f => f.oferta );
@@ -74,10 +76,6 @@ this.frutaPrimeraColor = this.frutas.find(f => f.oferta &&( f.color.find(c => c 
     f.descuento = 5;
     f.img = 'http://asipasa.com/media/i/17d1b48e-554a-11e2-8fa7-3c4a92dfe5a8.jpg';
     this.frutas.push(f);
-
-
-
-    //loadArrayNombreFrutas
   }
 
 
