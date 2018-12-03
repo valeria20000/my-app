@@ -25,6 +25,7 @@
 
                 <!--CARRITO DE LA COMPRA-->
                 
+                              
                 <div class="breadcrumbs">
                         <ol class="breadcrumb">
                           <li class="active">Carro Compra</li>
@@ -43,74 +44,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let fruta of carro">
                                     <td class="cart_product">
-                                        <a href=""><img src="images/cart/one.png" alt=""></a>
+                                        <a href=""><img src="{{fruta.img}}" alt="{{fruta._nombre}}"></a>
                                     </td>
                                     <td class="cart_description">
-                                        <h4><a href="">Pera</a></h4>
+                                        <h4><a href="">{{fruta._nombre}}</a></h4>
                                     </td>
                                     <td class="cart_price">
-                                        <p>$2</p>
+                                        <p>{{(fruta.precio - (fruta.precio*fruta.descuento)/100 | number:'1.2-2')}} $</p>
                                     </td>
                                     <td class="cart_quantity">
                                         <div class="cart_quantity_button">
-                                            <a class="cart_quantity_up" href=""> + </a>
+                                            <a class="cart_quantity_up" href="" (click)="menosCantidad($event)"> + </a>
                                             <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
                                             <a class="cart_quantity_down" href=""> - </a>
                                         </div>
                                     </td>
                                     <td class="cart_total">
-                                        <p class="cart_total_price">$59</p>
-                                    </td>
-                                    <td class="cart_delete">
-                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-        
-                                <tr>
-                                    <td class="cart_product">
-                                        <a href=""><img src="images/cart/two.png" alt=""></a>
-                                    </td>
-                                    <td class="cart_description">
-                                        <h4><a href="">Platano</a></h4>
-                                    </td>
-                                    <td class="cart_price">
-                                        <p>$59</p>
-                                    </td>
-                                    <td class="cart_quantity">
-                                        <div class="cart_quantity_button">
-                                            <a class="cart_quantity_up" href=""> + </a>
-                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                            <a class="cart_quantity_down" href=""> - </a>
-                                        </div>
-                                    </td>
-                                    <td class="cart_total">
-                                        <p class="cart_total_price">$59</p>
-                                    </td>
-                                    <td class="cart_delete">
-                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="cart_product">
-                                        <a href=""><img src="images/cart/three.png" alt=""></a>
-                                    </td>
-                                    <td class="cart_description">
-                                        <h4><a href="">Fresa</a></h4>
-                                    </td>
-                                    <td class="cart_price">
-                                        <p>$59</p>
-                                    </td>
-                                    <td class="cart_quantity">
-                                        <div class="cart_quantity_button">
-                                            <a class="cart_quantity_up" href=""> + </a>
-                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                            <a class="cart_quantity_down" href=""> - </a>
-                                        </div>
-                                    </td>
-                                    <td class="cart_total">
-                                        <p class="cart_total_price">$59</p>
+                                        <p class="cart_total_price">{{(fruta.precio - (fruta.precio*fruta.descuento)/100 | number:'1.2-2')}} $</p>
                                     </td>
                                     <td class="cart_delete">
                                         <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>

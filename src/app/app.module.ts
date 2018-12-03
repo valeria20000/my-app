@@ -1,5 +1,8 @@
+//Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 
 //Componentes
@@ -8,7 +11,6 @@ import { AppComponent } from './app.component';
 import { FrutaComponent } from './components/fruta/fruta.component';
 import { ClaseComponent } from './components/clase/clase.component';
 import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
@@ -21,6 +23,12 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-fruta.component';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareaComponent } from './components/tarea/tarea.component';
+
+//Service
+import { FrutaService } from './providers/fruta.service';
+import { TareaService } from './providers/tarea.service';
+
 
 //Providers o servicios
 
@@ -39,14 +47,19 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
     PersonaPipe,
     EjercicioFrutaComponent,
     FrutaCardComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //peticiones Http
   ],
-  providers: [],
+  providers: [
+    FrutaService,
+    TareaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
