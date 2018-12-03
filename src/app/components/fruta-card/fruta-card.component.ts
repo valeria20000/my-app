@@ -52,7 +52,8 @@ this.fruta.img = 'http://frutasfontellas.es/wp-content/uploads/2013/06/Melocoton
 
   ngOnInit() {
   }
-  comprar(event: Event){
+
+  comprar(){
     //Todo hacerlo con a
     //event.preventDefault();
    // alert('Lo sentimos pero de momento tenemos esta opcion desabilitada ## ${this.fruta.nombre}');

@@ -23,62 +23,29 @@
                 </div>
 
 
-                <!--CARRITO DE LA COMPRA-->
+                <div class="col-2 carrito">
+                    <h6>Carrito Compra</h6>
+                    <p>TOTAL <span>{{getTotal() | number:'1.2-2'}} €</span></p>
+                    <ul class="list-group">
+                        <li *ngFor="let p of carrito, let i = index" class="list-group-item">
+                            <span (click)="eliminarProducto(p,i)" class="badge badge-danger float-right">X</span>
+                            <p>
+                                <img src="{{p.img}}" alt="imagen de la fruta {{ p.nombre }}">
+                                <span class="nombre">{{ p.nombre }}</span><br>
+                                <span class="precio">{{ p.precio | number:'1.2-2' }} €</span>
+                            </p>
+                            <p>
+                                <button class="btn" (click)="sumarProducto(p,i)">+</button>
+                                <span class="cantidad">{{ p.cantidad }}</span>
+                                <button class="btn" (click)="restarProducto(p,i)">-</button>             
+                            </p>
+                            <p>
+                                 total {{ p.precio * p.cantidad  | number:'1.2-2' }} €
+                            </p>
+                        </li>
+                    </ul>
+                   </div> 
                 
-                              
-                <div class="breadcrumbs">
-                        <ol class="breadcrumb">
-                          <li class="active">Carro Compra</li>
-                        </ol>
-                    </div>
-                    <div class="table-responsive cart_info">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr class="cart_menu">
-                                    <td class="image">Producto</td>
-                                    <td class="description"></td>
-                                    <td class="price">Precio</td>
-                                    <td class="quantity">Cantidad</td>
-                                    <td class="total">Total</td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let fruta of carro">
-                                    <td class="cart_product">
-                                        <a href=""><img src="{{fruta.img}}" alt="{{fruta._nombre}}"></a>
-                                    </td>
-                                    <td class="cart_description">
-                                        <h4><a href="">{{fruta._nombre}}</a></h4>
-                                    </td>
-                                    <td class="cart_price">
-                                        <p>{{(fruta.precio - (fruta.precio*fruta.descuento)/100 | number:'1.2-2')}} $</p>
-                                    </td>
-                                    <td class="cart_quantity">
-                                        <div class="cart_quantity_button">
-                                            <a class="cart_quantity_up" href="" (click)="menosCantidad($event)"> + </a>
-                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                            <a class="cart_quantity_down" href=""> - </a>
-                                        </div>
-                                    </td>
-                                    <td class="cart_total">
-                                        <p class="cart_total_price">{{(fruta.precio - (fruta.precio*fruta.descuento)/100 | number:'1.2-2')}} $</p>
-                                    </td>
-                                    <td class="cart_delete">
-                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                    <tr class="carrito-total">
-                                      <td colspan="2"></td>
-                                      <td>
-                                        Total: {{total}}€
-                                      </td>
-                                    </tr>
-                                </tfoot>
-                        </table>
-                    </div>
             </div>            
     </section>
 

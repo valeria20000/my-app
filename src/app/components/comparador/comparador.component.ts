@@ -14,15 +14,16 @@ export class ComparadorComponent implements OnInit {
   f2: Fruta;
   productos: Array<Fruta> = [];
   total: number;
-  carro: Fruta[];
+  carrito: Fruta[];
 
 
   //FrutaService es @Injectable por el cual debemos declararlo en el constuctor , nunca haremos new y no usarlo dentro del constructoe mejor en el ngOninit
   constructor( public frutaService: FrutaService) {
-    this.frutas = [];
+   
     this.f1 = new Fruta();
     this.f2 = new Fruta();
-    this.carro = [];
+    this.carrito = [];
+    this.frutas = [];
     this.total = 0;
 
 
@@ -43,32 +44,46 @@ export class ComparadorComponent implements OnInit {
     this.f2 = this.f1;
     this.f1 = fruta;
   }
-  actualizarCarro(event : Event){
-    const fruta: Fruta = event['frutaClick'];
+  getTotal(): number{
+    let total = 0;
+    this.carrito.forEach( el => {
+      total += el.precio * el.cantidad;
+    })
+    return total;
+  }
 
-    this.carro.push(fruta);
-    let precio: number = 0;
-    if(fruta.oferta){
-      precio = fruta.precio - (fruta.precio * fruta.descuento)/100
-    }else{
-      precio = fruta.precio;
+  sumarProducto(p: Fruta, index: number){    
+    p.cantidad++;
+    this.carrito[index] = p;
+  }
+
+  restarProducto(p: Fruta, index: number){
+    if ( p.cantidad > 1 ){
+      p.cantidad--;
+      this.carrito[index] = p;
     }
-    
-    
-    this.total = this.total + precio;
+  }
+
+  eliminarProducto(p: Fruta, index: number){
+    p.cantidad = 1;
+    this.carrito.splice(index,1);
+  }
+
+  actualizarCarro( event: Event) {
     console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
-    console.debug('Parametro frutaClick = %o', event['frutaClick']);
-
-
-
-
+    let frutaClick = event['frutaClick'];
+    console.debug('Parametro frutaClick = %o' , frutaClick );
+    let f = this.carrito.find( f => f.nombre === frutaClick.nombre);
+    if ( f ){
+      f.cantidad ++;
+      let index = this.carrito.indexOf(frutaClick);
+      this.carrito[index]= f;      
+    }else{
+      frutaClick.cantidad = 1;
+      this.carrito.push(frutaClick);
+    }  
   }
-  masCantidad(event: Event){
 
-
-   
-     
-  }
 
   
   
