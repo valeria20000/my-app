@@ -7,7 +7,7 @@
               <div class="col" *ngFor="let fruta of frutas">
                   <app-fruta-card [_fruta]= "fruta"></app-fruta-card>
               </div>
-            </div>
+              </div>
 
               <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark mt-4 ">
                   <div class="col px-0">
@@ -25,34 +25,50 @@
                         </ol>
                         <h5>1. Traducir json de frutas en un objeto</h5>
                         <p class="text-success">{{ frutas | json }}</p>
+
                         <h5>2. Sacar por pantalla las frutas</h5>
                         <ol class="text-success">
                             <li *ngFor="let f of frutas ">{{ f.nombre }}</li>
                         </ol>
+                        
                        <h5>3. Guardar en una variable el precio total de todas las frutas</h5>
                           <p class="text-success">Precio Total : {{preciototal}} € </p>
 
-                        <h5>4. Crear un array solo con los nombres (Array de strings)</h5>
-                          <p class="text-success">{{nombrefrutas}}</p>
-
-                        <h5>5. Conseguir array solo con las frutas en oferta</h5>
-                        <ul class="text-success">
-                          <li *ngFor="let f of frutasoferta"> {{f.nombre}} </li>
-                        </ul>
-
-                        <h5>6. Conseguir array solo con las frutas de color rojo</h5>
-
-                        <ol class="text-success">
-                          <li *ngFor="let f of frutasColorRojo ">{{ f.nombre }}</li>
-                      </ol>
-
-                        <h5>7. Conseguir primera fruta en oferta</h5>
-                          <p class="text-success">{{frutaPrimeraOferta.nombre}}</p>
-
-                        <h5>8. Conseguir primera fruta en oferta de color verde </h5>
-                          <p class="text-success">{{frutaPrimeraColor.nombre}}</p>
+                        <h5>Crear un array solo con los nombres (Array de strings)</h5>
+      
+    
                   </div>
                 </div>
+
+
+              <div class="row">
+                <div class="col">
+                        <h4>Precio total</h4>
+                        <ol>
+                        <li>{{preciototal}}</li>
+                        </ol>
+                        <h4>Nombre Frutas</h4>
+                        <ol>
+                        <li>{{nombrefrutas}}</li>
+                        </ol>
+                        <h4>Frutas Oferta</h4>
+                        <ol>
+                        <li>{{frutasoferta}}</li>
+                        </ol>
+                  <h4>Lista Frutas</h4>
+                  <ol>
+                    <li *ngFor="let f of frutas ">{{ f.nombre }}</li>
+                  </ol>
+                  <h4>Futa Primera Oferta</h4>
+                    <li>{{ frutaPrimeraOferta.nombre }}</li>
+                  <ol>
+                    <h4>Futa Primera Color</h4>
+                    <li>{{ frutaPrimeraColor.nombre }}</li>
+
+                  </ol>
+                </div>
+              </div>
         </div>
+            
     </section>
 </main>
