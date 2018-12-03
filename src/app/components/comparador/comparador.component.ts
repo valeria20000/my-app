@@ -11,13 +11,14 @@ export class ComparadorComponent implements OnInit {
   frutas: Fruta[];
   f1: Fruta;
   f2: Fruta;
+  productos: Array<Fruta> = [];
+  total: number;
 
   constructor() { 
     this.frutas = [];
     this.f1 = new Fruta();
     this.f2 = new Fruta();
     this.loadfrutas();
-
     this.f1 =  this.frutas[0];
     this.f2 =  this.frutas[1];
 
@@ -29,6 +30,13 @@ export class ComparadorComponent implements OnInit {
     console.trace('ComparadorComponent seleccionar %o', fruta);
     this.f2 = this.f1;
     this.f1 = fruta;
+  }
+  actualizarCarro(event : Event){
+    console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo')
+    console.debug('Parametro frutaClick = %o', event['frutaClick']);
+
+
+
   }
 
   loadfrutas(): void {

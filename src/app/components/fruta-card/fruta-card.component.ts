@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
 
 @Component({
@@ -7,6 +7,7 @@ import { Fruta } from 'src/app/model/fruta';
   styleUrls: ['./fruta-card.component.scss']
 })
 export class FrutaCardComponent implements OnInit {
+
    _fruta: Fruta;
    _fruta2?: Fruta; // ? opcional
 
@@ -19,10 +20,10 @@ export class FrutaCardComponent implements OnInit {
     }
   }
 
-
    get fruta(): Fruta {
     return this._fruta;
   }
+
 
   @Input('_fruta2') set fruta2 (value: Fruta) {
     this._fruta2 = value;
@@ -31,6 +32,9 @@ export class FrutaCardComponent implements OnInit {
   get fruta2(): Fruta {
     return this._fruta2;
   }
+
+  // Registrar evento de salida
+  @Output() clikCompra = new EventEmitter();  
 
 
   constructor() {
@@ -52,6 +56,8 @@ this.fruta.img = 'http://frutasfontellas.es/wp-content/uploads/2013/06/Melocoton
     //Todo hacerlo con a
     //event.preventDefault();
     alert('Lo sentimos pero de momento tenemos esta opcion desabilitada ## ${this.fruta.nombre}');
+//Emitimos eventos al componente padre y enviamos parametro 'frutaClick'
+    this.clikCompra.emit({frutaClick : this.fruta});
   }
 
 }

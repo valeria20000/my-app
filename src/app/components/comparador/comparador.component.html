@@ -1,17 +1,133 @@
 <main role="main">
-    <section class="jumbotron text-center ">
+    <section class="jumbotron text-center">
         <div class="container ">
+
+            <div class="row">
+                    <div class="col">
+                            <p>Registrar Eventos @Ouput</p>
+                            <p>El componente padre puede recibir eventos del componente hijo. </p>
+            
+                     </div> 
+               
+            </div>
+            
                 <div class="row justify-content-center">
                         <div class="col-3">
                                 <ul class="list-group">
                                     <li *ngFor="let f of frutas" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>         
                                   </ul>
                             </div>
-                    <div class="col-4"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" ></app-fruta-card></div>
-                    <div class="col-4"><app-fruta-card [_fruta]="f2" [_fruta2]="f1"></app-fruta-card></div>
+                    <div class="col-4"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
+                    <div class="col-4"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
                     
-                 </div> 
-          </div>
-            
+                </div>
+
+
+                <!--CARRITO DE LA COMPRA-->
+                
+                <div class="breadcrumbs">
+                        <ol class="breadcrumb">
+                          <li class="active">Carro Compra</li>
+                        </ol>
+                    </div>
+                    <div class="table-responsive cart_info">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr class="cart_menu">
+                                    <td class="image">Producto</td>
+                                    <td class="description"></td>
+                                    <td class="price">Precio</td>
+                                    <td class="quantity">Cantidad</td>
+                                    <td class="total">Total</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cart_product">
+                                        <a href=""><img src="images/cart/one.png" alt=""></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="">Pera</a></h4>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>$2</p>
+                                    </td>
+                                    <td class="cart_quantity">
+                                        <div class="cart_quantity_button">
+                                            <a class="cart_quantity_up" href=""> + </a>
+                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+                                            <a class="cart_quantity_down" href=""> - </a>
+                                        </div>
+                                    </td>
+                                    <td class="cart_total">
+                                        <p class="cart_total_price">$59</p>
+                                    </td>
+                                    <td class="cart_delete">
+                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td class="cart_product">
+                                        <a href=""><img src="images/cart/two.png" alt=""></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="">Platano</a></h4>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>$59</p>
+                                    </td>
+                                    <td class="cart_quantity">
+                                        <div class="cart_quantity_button">
+                                            <a class="cart_quantity_up" href=""> + </a>
+                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+                                            <a class="cart_quantity_down" href=""> - </a>
+                                        </div>
+                                    </td>
+                                    <td class="cart_total">
+                                        <p class="cart_total_price">$59</p>
+                                    </td>
+                                    <td class="cart_delete">
+                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_product">
+                                        <a href=""><img src="images/cart/three.png" alt=""></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="">Fresa</a></h4>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>$59</p>
+                                    </td>
+                                    <td class="cart_quantity">
+                                        <div class="cart_quantity_button">
+                                            <a class="cart_quantity_up" href=""> + </a>
+                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+                                            <a class="cart_quantity_down" href=""> - </a>
+                                        </div>
+                                    </td>
+                                    <td class="cart_total">
+                                        <p class="cart_total_price">$59</p>
+                                    </td>
+                                    <td class="cart_delete">
+                                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                    <tr class="carrito-total">
+                                      <td colspan="2"></td>
+                                      <td>
+                                        Total: {{total}}€
+                                      </td>
+                                    </tr>
+                                </tfoot>
+                        </table>
+                    </div>
+            </div>            
     </section>
+
 </main>

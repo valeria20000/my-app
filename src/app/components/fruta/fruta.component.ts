@@ -20,6 +20,8 @@ export class FrutaComponent implements OnInit {
   frutasColorRojo: Fruta[];
 
 
+
+
   constructor() {
     console.trace('FrutaComponent constructor');
     this.titulo = 'fruta';
@@ -32,6 +34,8 @@ this.frutasColorRojo = this.frutas.filter(el => el.color.find(c => c === 'rojo')
 this.preciototal = this.frutas.map( f => f.precio).reduce((c, p) => c + p);
 this.nombrefrutas = this.frutas.map(el => el.nombre);
 this.frutasoferta = this.frutas.filter(f => f.oferta );
+
+
 
 //conseguir primera fruta oferta 
 this.frutaPrimeraOferta = this.frutas.find( el => el.oferta);
