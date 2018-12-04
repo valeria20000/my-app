@@ -20,6 +20,27 @@ export class FrutaService {
 
   }
 
+  add(fruta : Fruta): Observable <any>{
+    let body = {
+    "nombre": fruta.nombre,
+    "precio": fruta.precio,
+    "calorias":fruta.calorias,
+    "color": fruta.color,
+    "oferta": fruta.oferta,
+    "descuento": fruta.descuento,
+    "img": fruta.img  
+  };
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Context-Type': 'application/json'
+      })
+
+      
+    };
+    return this.http.post(this.endopoint, body , httpOptions);
+    
+  }
+
   
   }
 

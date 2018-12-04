@@ -1,6 +1,6 @@
 //Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -17,6 +17,7 @@ import { VideojuegoDetalleComponent } from './components/videojuego-detalle/vide
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ComponentsComponent } from './components/components.component';
 import { PersonaPipe } from './pipes/persona.pipe';
+import { FormularioComponent } from './components/formulario/formulario.component';
  
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -29,6 +30,7 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Service
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+
 
 
 
@@ -51,13 +53,16 @@ import { TareaService } from './providers/tarea.service';
     FrutaCardComponent,
     ComparadorComponent,
     TareaComponent,
-    TareasPipe
+    TareasPipe,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule //peticiones Http
+    ReactiveFormsModule, //formularios reactivos
+    HttpClientModule//peticiones Http
+  
   ],
   providers: [
     FrutaService,

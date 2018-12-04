@@ -13,6 +13,7 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-fruta.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 const routes: Routes = [
 { path: 'home', component: HomeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
 { path: 'clase', component: ClaseComponent},
 { path: 'pipe', component: PipeComponent},
 { path: 'tareas', component: TareaComponent},
+{ path: 'formulario', component: FormularioComponent},
 { path: 'comparador', component: ComparadorComponent},
 { path: 'array', component: EjercicioFrutaComponent},
 { path: 'videojuego-detalle', component: VideojuegoDetalleComponent},

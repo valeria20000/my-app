@@ -1,5 +1,8 @@
 export class Fruta {
 
+    private _id: number;
+    
+
     private _nombre: string;
     
     private _precio: number;
@@ -19,6 +22,7 @@ export class Fruta {
     
 
     constructor(){
+        this._id = -1;
         this._nombre = '';
         this._precio = 0;
         this._calorias = 0;
@@ -30,7 +34,12 @@ export class Fruta {
    
     }
 
-
+    public get id(): number {
+        return this._id;
+    }
+    public set id(value: number) {
+        this._id = value;
+    }
 
     public get nombre(): string {
         return this._nombre;
