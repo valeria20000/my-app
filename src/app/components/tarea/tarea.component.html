@@ -6,59 +6,32 @@
         <p>
           Ejemplo de crear un <b>Provider</b> o Servide para realizar las operaciones de CRUD contra un <b>Servicio-Rest</b>
           </p>
-          {{tareas | json}}
-          <ul class="list-group">
-              <li class="list-group-item" *ngFor="let tareas of tareas">{{tareas | json}}</li>
-            </ul>
+          
 
-            <div class="btn-group btn-group-toggle mt-4" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Todos
-                </label>
-                <label class="btn btn-danger">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> Pendientes
-                </label>
-
-
-                <form class="form-inline">
-                
-                    <div class="form-group mx-sm-3 mb-2">
-                      <label for="inputPassword2" class="sr-only">Tarea</label>
-                      <input type="text" class="form-control" id="inputPassword2" placeholder="Inserte nueva tarea">
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-2">Nueva Tarea</button>
-                  </form>
-              </div>
-          <div class="row justify-content-center mt-4">
-
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Tarea</th>
-                  <th scope="col">Accion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">  <input type="checkbox" id="cbox1" value="first_checkbox">
-                  <td>Tarea 1</td>
-                  <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row"><input type="checkbox" id="cbox1" value="first_checkbox"></th>
-                  <td>Tarea 2</td>
-                  <td><i class="fas fa-trash-alt"></i></td>
-                  
-                </tr>
-                <tr>
-                  <th scope="row"><input type="checkbox" id="cbox1" value="first_checkbox"></th>
-                  <td>Tarea 3</td>
-                  <td><i class="fas fa-trash-alt"></i></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="toggle-button toggle-button--aava">
+              <input id="toggleButton"  (change)= "filtrar()"  type="checkbox">
+              <label for="toggleButton" data-on-text="Pendiente" data-off-text="Todas"></label>
+              <div class="toggle-button__icon"></div>
           </div>
+
+
+           
+                
+                <div class="input-group mb-3">
+                    <input type="text" [(ngModel)]="nueva" class="form-control" placeholder="Descripción">
+                    <div class="input-group-append">
+                      <button (click)="nuevaTarea()" class="btn btn-outline-secondary" type="button">Nueva Tarea</button>
+                    </div>
+                </div>
+
+         <ul class="list-group">
+           <li class="list-group-item" *ngFor="let tarea of tareas | completas : todas">
+             <input type="checkbox" checked="{{tarea.terminado ? 'checked': '' }}" (change)="terminar(tarea)">
+              <span *ngIf="!tarea.terminado">&nbsp;{{tarea.titulo}}</span>
+              <span *ngIf="tarea.terminado">&nbsp;<del>{{tarea.titulo}}</del></span>
+              <i class="fas fa-trash-alt" (click)= "eliminar(tarea.id)"></i>
+           </li>
+         </ul>
 
 
       </div>

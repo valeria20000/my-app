@@ -24,10 +24,12 @@ import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { TareasPipe } from './pipes/tareas.pipe';
 
 //Service
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+
 
 
 //Providers o servicios
@@ -48,7 +50,8 @@ import { TareaService } from './providers/tarea.service';
     EjercicioFrutaComponent,
     FrutaCardComponent,
     ComparadorComponent,
-    TareaComponent
+    TareaComponent,
+    TareasPipe
   ],
   imports: [
     BrowserModule,
