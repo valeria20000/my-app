@@ -88,59 +88,6 @@
       "oferta": true,
       "descuento": 5,
       "img": "http://asipasa.com/media/i/17d1b48e-554a-11e2-8fa7-3c4a92dfe5a8.jpg"
-    },
-    {
-      "nombre": "sdfghj",
-      "precio": "2",
-      "id": 4
-    },
-    {
-      "nombre": "aaaa",
-      "precio": "2",
-      "id": 5
-    },
-    {
-      "nombre": "zzz",
-      "precio": "2",
-      "calorias": "300",
-      "id": 6
-    },
-    {
-      "nombre": "zx",
-      "precio": "1",
-      "calorias": "300",
-      "color": "rojo",
-      "id": 7
-    },
-    {
-      "nombre": "manzana",
-      "precio": "2",
-      "calorias": "300",
-      "color": "rojo",
-      "oferta": "true",
-      "descuento": "10",
-      "img": "sddf",
-      "id": 8
-    },
-    {
-      "nombre": "manzana",
-      "precio": "2",
-      "calorias": "300",
-      "color": "rojo",
-      "oferta": "true",
-      "descuento": "10",
-      "img": "https://www.google.es/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwil4d_um4bfAhUPLBoKHTecDFwQjRx6BAgBEAU&url=http%3A%2F%2Fwww.spiritgrowjosefkrysscenter.org%2Fblog%2Fla-manzana-de-sus-ojos&psig=AOvVaw3MWhovvTTDDw9osfOLPaEK&ust=1544014358701562",
-      "id": 9
-    },
-    {
-      "nombre": "aa",
-      "precio": "2",
-      "calorias": "22",
-      "color": "rojo",
-      "oferta": "true",
-      "descuento": "10",
-      "img": "https://www.google.es/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiIwOSgnYbfAhVOWBoKHRIAA_AQjRx6BAgBEAU&url=https%3A%2F%2Fwww.eluniversal.com.mx%2Farticulo%2Fmenu%2F2016%2F09%2F7%2Fmanzana-la-fruta-de-la-salud&psig=AOvVaw3MWhovvTTDDw9osfOLPaEK&ust=1544014358701562",
-      "id": 10
     }
   ]
 }

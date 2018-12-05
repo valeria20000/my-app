@@ -9,25 +9,32 @@
         <li class="nav-item active">
           <a class="nav-link" [routerLink] = "['home']">Home</a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Componentes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink] = "['array']">1º Componente Fruta</a>
-            <a class="dropdown-item"[routerLink] = "['clase']">2º Componente Alumno</a>
+            <a class="dropdown-item" [routerLink] = "['clase']">2º Componente Alumno</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"[routerLink] = "['flujo']">Flujo Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"[routerLink] = "['fruta']">Fruta Cards</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"[routerLink] = "['comparador']">Comparador Componente</a>
-        </li>
-      
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fruta
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink] = "['fruta']">Fruta Cards</a>
+              <a class="dropdown-item" [routerLink] = "['comparador']">Comparador Componente</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" [routerLink] = "['flujo']">Flujo Information</a>
+            </li>
+          
         <li class="nav-item">
           <a class="nav-link"[routerLink] = "['videojuego-detalle']">Videojuego Detalle</a>
         </li>
@@ -40,6 +47,10 @@
             <li class="nav-item">
                 <a class="nav-link"[routerLink] = "['formulario']">Formulario</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link"[routerLink] = "['crud']">Crud Fruta</a>
+                </li>
+
       </ul>
     </div>
   </nav>

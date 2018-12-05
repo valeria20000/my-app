@@ -19,6 +19,18 @@ export class FrutaService {
     return this.http.get(this.endopoint);
 
   }
+  
+  delete(id: number): Observable<any>{
+    let uri = this.endopoint + "/" + id
+    console.trace(`FrutaService delete ${uri}`);
+    return this.http.delete(uri);
+  }
+
+  getById(id: number):  Observable<any>{
+  
+    let url = this.endopoint + "/" + id;
+    return this.http.get(url);
+  }
 
   add(fruta : Fruta): Observable <any>{
     let body = {

@@ -14,6 +14,8 @@ import { EjercicioFrutaComponent } from './components/ejercicio-fruta/ejercicio-
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
+import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
 
 const routes: Routes = [
 { path: 'home', component: HomeComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
 { path: 'pipe', component: PipeComponent},
 { path: 'tareas', component: TareaComponent},
 { path: 'formulario', component: FormularioComponent},
+{ path: 'crud', component: CrudFrutaComponent},
+{ path: 'detalle/:id', component: DetalleFrutaComponent},
 { path: 'comparador', component: ComparadorComponent},
 { path: 'array', component: EjercicioFrutaComponent},
 { path: 'videojuego-detalle', component: VideojuegoDetalleComponent},

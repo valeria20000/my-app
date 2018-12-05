@@ -1,0 +1,30 @@
+<h2>Detalle Componente</h2>
+<p>Se envian parametros desde la HOME</p>
+
+
+
+ 
+<form class="form" [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label" for="nombre">Nombre:</label>
+      <div class="col-lg-9">
+        <input type="text" formControlName="nombre" class="from-control" />
+        <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 50 Letras.</small>
+        <small *ngIf="formulario.controls.nombre.valid" class="form-text text-succes" >Correcto</small>
+      </div>
+    </div>
+
+
+
+
+<div class="form-group row">
+      <label  class="col-lg-3 col-form-label form-control-label"  for="img"> Imagen: </label>
+      <img src="{{formulario.controls.img.value}}" alt="imagen destacada" class="/"/>
+      <input type="text" formControlName="img" class="from-control" placeholder="url imagen con extension png, jpg, jpeg"/>
+      <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small>
+      <small *ngIf="formulario.controls.img.valid" class="form-text text-succes" >Correcto</small>
+   
+
+    <input type="submit" value="crear" class="btn btn-success" [disabled]="formulario.status === 'INVALID'"/>
+</div>
+  </form>

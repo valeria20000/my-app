@@ -30,6 +30,8 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Service
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
+import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
+import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
 
 
 
@@ -54,7 +56,9 @@ import { TareaService } from './providers/tarea.service';
     ComparadorComponent,
     TareaComponent,
     TareasPipe,
-    FormularioComponent
+    FormularioComponent,
+    CrudFrutaComponent,
+    DetalleFrutaComponent
   ],
   imports: [
     BrowserModule,

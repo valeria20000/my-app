@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms"; // gestionar formulario
+import { FormControl, FormGroup, FormArray, Validators } from "@angular/forms"; // gestionar formulario
 import { Fruta } from "src/app/model/fruta";
 import { FrutaService } from "src/app/providers/fruta.service";
 
@@ -11,9 +11,11 @@ import { FrutaService } from "src/app/providers/fruta.service";
 export class FormularioComponent implements OnInit {
   nombre: FormControl; //control o input del formulario
   formulario: FormGroup; //formulario para agrupar input == FormsControl
+  colores: FormArray; //Array 
 
   constructor(public frutaService: FrutaService) {
     console.trace("FormularioComponent constructor");
+   
 
     //agrupacion de controlers == formulario
     this.formulario = new FormGroup({
@@ -24,40 +26,59 @@ export class FormularioComponent implements OnInit {
       ]),
       precio: new FormControl("0", [
         Validators.required,
-        Validators.minLength(0),
-        Validators.maxLength(5)
+        Validators.min(0.1),
+        Validators.max(999)
       ]),
       calorias: new FormControl("0", [
         Validators.required,
-        Validators.minLength(0),
-        Validators.maxLength(5)
-      ]),
-      color: new FormControl("", [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(50)
+        Validators.min(0.1),
+        Validators.max(9999)
       ]),
       oferta: new FormControl(false, [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(5)
+        Validators.required
       ]),
       descuento: new FormControl("0", [
         Validators.required,
-        Validators.minLength(0),
-        Validators.maxLength(5)
+        Validators.min(5),
+        Validators.max(90)
       ]),
-      img: new FormControl("", [
+      img: new FormControl('https://picsum.photos/300/300/?image=1057', [
         Validators.required,
-        Validators.minLength(2)
-   
-      ])
+        Validators.pattern('^(http(s?):\/\/).+(\.(jpg|png|jpeg))$') //que comience en http o https y que termine en jpg o png p jpeg
+      ]),
+      colores: new FormArray([this. crearColorFormGroup()], Validators.minLength(1))
     });
+
+
   }
 
   ngOnInit() {
     console.trace("FormularioComponent ngOnInit");
   }
+  crearColorFormGroup(): FormGroup{
+
+    return new FormGroup({
+  color: new FormControl('verde', 
+                        [Validators.required,
+                        Validators.minLength(2),
+                        Validators.maxLength(15)
+                        
+                        ])
+  });
+  }
+
+  nuevoColor(){
+    let arrayColores = this.formulario.get('colores') as FormArray;
+    arrayColores.push(this.crearColorFormGroup());
+  }
+
+  eliminarColor( index: number){
+    let arrayColores = this.formulario.get('colores') as FormArray;
+    if ( arrayColores.length > 1 ){
+      arrayColores.removeAt(index);
+    }  
+  }
+
 
   caragarFormulario() {
     this.formulario.controls.nombre.setValue("fresa");
