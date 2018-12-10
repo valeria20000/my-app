@@ -23,6 +23,7 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 
 //Service
 import { FrutaService } from './providers/fruta.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -45,7 +46,8 @@ import { FrutaService } from './providers/fruta.service';
     ComparadorComponent,
     FormularioComponent,
     CrudFrutaComponent,
-    DetalleFrutaComponent
+    DetalleFrutaComponent,
+    LoginComponent
 
   ],
   imports: [
