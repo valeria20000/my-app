@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FrutaService } from 'src/app/providers/fruta.service';
 import { Fruta } from 'src/app/model/fruta';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-crud-fruta',
@@ -11,7 +12,7 @@ export class CrudFrutaComponent implements OnInit {
   frutas: Fruta[];
   
 
-  constructor(public frutaService: FrutaService) {
+  constructor(public frutaService: FrutaService, private route: ActivatedRoute) {
     this.frutas = [];
    }
 

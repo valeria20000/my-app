@@ -38,11 +38,22 @@ export class LoginComponent implements OnInit {
     u.password = password;
 
     if(this.loginService.login(u)){
-      this.router.navigate(['privado']);
+      this.router.navigate(['crud']);
 
     }else{
       this.mensaje = 'Credenciales incorrectas';
     }
+  }
+
+  logout(){
+    this.loginService.logout();
+    this.router.navigate(['comparador']);
+  }
+
+  logueado() {
+    if (this.loginService.isLogged()) {
+      return true
+    } else { return false }
   }
 
 }

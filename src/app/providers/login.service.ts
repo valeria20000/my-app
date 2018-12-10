@@ -21,15 +21,15 @@ export class LoginService {
     }
   }
 
-  logout(): void{
+  logout(): void {
     this.usuario = undefined;
   }
 
-  login(u: Usuario): boolean{
-    if(u && u.nombre === USUARIO_NOMBRE && u.password === USUARIO_PASSWORD){
+  login(u: Usuario): boolean {
+    if (u && u.nombre === USUARIO_NOMBRE && u.password === USUARIO_PASSWORD) {
       this.usuario = u;
       return true;
-    }else{
+    } else {
       this.usuario = undefined;
       return false;
     }
