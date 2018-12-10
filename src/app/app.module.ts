@@ -18,6 +18,10 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { ComponentsComponent } from './components/components.component';
 import { PersonaPipe } from './pipes/persona.pipe';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
+import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
  
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -30,10 +34,12 @@ import { TareasPipe } from './pipes/tareas.pipe';
 //Service
 import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
-import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
-import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
-import { BackofficeComponent } from './components/backoffice/backoffice.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginService } from './providers/login.service';
+
+
+//Guards
+import { BackofficeGuard } from './guards/backoffice.guard';
+
 
 
 
@@ -74,7 +80,9 @@ import { LoginComponent } from './components/login/login.component';
   ],
   providers: [
     FrutaService,
-    TareaService
+    TareaService,
+    LoginService,
+    BackofficeGuard
   ],
   bootstrap: [AppComponent]
 })

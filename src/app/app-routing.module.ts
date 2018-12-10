@@ -16,6 +16,9 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
 import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { BackofficeGuard } from './guards/backoffice.guard';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 { path: 'home', component: HomeComponent},
@@ -27,11 +30,15 @@ const routes: Routes = [
 { path: 'crud', component: CrudFrutaComponent},
 { path: 'detalle/:id', component: DetalleFrutaComponent},
 { path: 'comparador', component: ComparadorComponent},
+{ path: 'login', component: LoginComponent},
+{ path: 'privado', component: BackofficeComponent, canActivate: [BackofficeGuard]},
 { path: 'array', component: EjercicioFrutaComponent},
 { path: 'videojuego-detalle', component: VideojuegoDetalleComponent},
 { path: '', redirectTo: '/home', pathMatch: 'full'},
 { path: 'flujo', component: FlujoInformacionComponent},
 { path: '**', component: Page404Component}
+//login
+
 
 ];
 
