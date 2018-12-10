@@ -7,18 +7,18 @@ import { LoginService } from '../providers/login.service';
   providedIn: 'root'
 })
 export class BackofficeGuard implements CanActivate {
-  constructor(private loginService: LoginService, private router: Router){
-    console.trace('BackofficeGuard constructor');
+
+  constructor( private loginService: LoginService, private router: Router){
+
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-      console.trace('BackofficeGuard canActivate');
-if(!this.loginService.isLogged()){
-      this.router.navigate(['login']);
-    return false;
-  }
-  return true;
+      if(!this.loginService.isLogged()){
+this.router.navigate(['login']);
+return false;
+      }
+    return true;
   }
 }

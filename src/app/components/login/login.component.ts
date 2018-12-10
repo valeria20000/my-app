@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/providers/login.service';
-import { Usuario } from 'src/app/model/usuario';
 import { Router } from '@angular/router';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-login',
@@ -10,44 +11,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  formulario: FormGroup; //formulario para agrupar input == FormsControl
+  formulario : FormGroup;
   mensaje: string;
 
   constructor(private loginService: LoginService, private router: Router) { 
-    console.trace('LoginComponent constructor ');
     this.crearFormulario();
-    this.mensaje ='TODO llamar Servicio';
+    this.mensaje = '';
   }
 
   ngOnInit() {
-    console.trace('LoginComponent ngOnInit ');
   }
+
   private crearFormulario(){
-    console.trace('LoginComponent crearFormulario ');
     this.formulario = new FormGroup({
       nombre: new FormControl('', [ Validators.required,Validators.minLength(2), Validators.maxLength(25)]),
       password: new FormControl('', [ Validators.required,Validators.minLength(6), Validators.maxLength(25)])
-  });
 
-}
-sumitar(){
-  console.trace('LoginComponent sumitar ');
-  //TODO llamar al servicio de login
-  let nombre = this.formulario.controls.nombre.value;
-  let password = this.formulario.controls.password.value;
-  console.debug(`nombre = ${nombre} password = ${password}`);
-
-  let u = new Usuario();
-  u.nombre = nombre;
-  u.password = password;
-
-  //llamar al servicio
-  if(this.loginService.login(u)){
-    this.router.navigate(['privado']);
-
-  }else{
-    this.mensaje = 'Credenciales no validas'
+    });
   }
-}
+  sumitar(){
+    let nombre = this.formulario.controls.nombre.value;
+    let password = this.formulario.controls.password.value;
+
+    let u = new Usuario();
+    u.nombre = nombre;
+    u.password = password;
+
+    if(this.loginService.login(u)){
+      this.router.navigate(['privado']);
+
+    }else{
+      this.mensaje = 'Credenciales incorrectas';
+    }
+  }
 
 }

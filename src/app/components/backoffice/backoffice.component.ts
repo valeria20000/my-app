@@ -9,13 +9,9 @@ import { Router } from '@angular/router';
 })
 export class BackofficeComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router) { 
-    console.trace('BackofficeComponent constructor');
-  }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
-    console.trace('BackofficeComponent ngOnInit');
-
   }
   logout(){
     this.loginService.logout();
