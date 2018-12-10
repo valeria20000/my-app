@@ -9,6 +9,9 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
 import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { LoginComponent } from './components/login/login.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { BackofficeGuard } from './guards/backoffice.guard';
 
 
 const routes: Routes = [
@@ -16,6 +19,8 @@ const routes: Routes = [
 { path: 'formulario', component: FormularioComponent},
 { path: 'crud', component: CrudFrutaComponent},
 { path: 'detalle/:id', component: DetalleFrutaComponent},
+{ path: 'login', component: LoginComponent},
+{ path: 'privado', component: BackofficeComponent, canActivate: [BackofficeGuard]},
 { path: 'comparador', component: ComparadorComponent},
 { path: '', redirectTo: '/home', pathMatch: 'full'},
 

@@ -24,6 +24,11 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
 //Service
 import { FrutaService } from './providers/fruta.service';
 import { LoginComponent } from './components/login/login.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+
+//Guards
+import { BackofficeGuard } from './guards/backoffice.guard';
+import { LoginService } from './providers/login.service';
 
 
 
@@ -47,7 +52,8 @@ import { LoginComponent } from './components/login/login.component';
     FormularioComponent,
     CrudFrutaComponent,
     DetalleFrutaComponent,
-    LoginComponent
+    LoginComponent,
+    BackofficeComponent
 
   ],
   imports: [
@@ -60,6 +66,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   providers: [
     FrutaService,
+    LoginService,
+    BackofficeGuard
     
   ],
   bootstrap: [AppComponent]
