@@ -16,38 +16,6 @@
   "profile": {
     "name": "typicode"
   },
-  "tareas": [
-    {
-      "id": 3,
-      "titulo": "Formulario Reactivos",
-      "terminado": false
-    },
-    {
-      "titulo": "Formulario Reactivos",
-      "terminado": false,
-      "id": 4
-    },
-    {
-      "titulo": "vvvvv",
-      "terminado": true,
-      "id": 6
-    },
-    {
-      "titulo": "sdfghjklñ",
-      "terminado": false,
-      "id": 7
-    },
-    {
-      "titulo": "adsfdghgj",
-      "terminado": true,
-      "id": 9
-    },
-    {
-      "titulo": "asdfghjklñ",
-      "terminado": false,
-      "id": 10
-    }
-  ],
   "frutas": [
     {
       "id": 1,
