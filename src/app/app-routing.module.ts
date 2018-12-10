@@ -22,7 +22,7 @@ const routes: Routes = [
 { path: 'login', component: LoginComponent},
 { path: 'privado', component: BackofficeComponent, canActivate: [BackofficeGuard]},
 { path: 'comparador', component: ComparadorComponent},
-{ path: '', redirectTo: '/home', pathMatch: 'full'},
+{ path: '', redirectTo: '/comparador', pathMatch: 'full'},
 
 { path: '**', component: Page404Component}
 //login
