@@ -32,6 +32,8 @@ import { FrutaService } from './providers/fruta.service';
 import { TareaService } from './providers/tarea.service';
 import { CrudFrutaComponent } from './components/crud-fruta/crud-fruta.component';
 import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -58,7 +60,9 @@ import { DetalleFrutaComponent } from './components/detalle-fruta/detalle-fruta.
     TareasPipe,
     FormularioComponent,
     CrudFrutaComponent,
-    DetalleFrutaComponent
+    DetalleFrutaComponent,
+    BackofficeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
