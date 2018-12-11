@@ -5,19 +5,15 @@
             <div class="row">
 
                     <input [(ngModel)]="texto" placeholder="search text goes here">
-                    <ul>
-                      <li *ngFor="let p of productos | filter : texto">
-                        {{c}}
-                      </li>
-                    </ul>
               
                
             </div>
+            <div><input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas</div>
             
                 <div class="row justify-content-center">
                         <div class="col-3">
                                 <ul class="list-group">
-                                    <li *ngFor="let f of frutas" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>         
+                                    <li *ngFor="let f of frutas | filter : texto | filterOferta: oferta" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>         
                                   </ul>
                             </div>
                     <div class="col-4"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
@@ -35,15 +31,19 @@
                             <p>
                                 <img src="{{p.img}}" alt="imagen de la fruta {{ p.nombre }}">
                                 <span class="nombre">{{ p.nombre }}</span><br>
-                                <span class="precio">{{ p.precio | number:'1.2-2' }} €</span>
+                                <span class="precio" *ngIf="!p.oferta">{{p.precio}} $</span>
+                                <span class="precio" *ngIf="p.oferta"><del>{{p.precio}}</del> {{(p.precio - (p.precio*p.descuento)/100 | number:'1.2-2')}} $</span>
                             </p>
                             <p>
                                 <button class="btn" (click)="sumarProducto(p,i)">+</button>
                                 <span class="cantidad">{{ p.cantidad }}</span>
                                 <button class="btn" (click)="restarProducto(p,i)">-</button>             
                             </p>
-                            <p>
+                            <p *ngIf="!p.oferta">
                                  total {{ p.precio * p.cantidad  | number:'1.2-2' }} €
+                            </p>
+                            <p *ngIf="p.oferta">
+                                total {{ (p.precio - (p.precio*p.descuento)/100) * p.cantidad  | number:'1.2-2' }} €
                             </p>
                         </li>
                     </ul>

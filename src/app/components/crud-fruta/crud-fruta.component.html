@@ -1,7 +1,8 @@
 <main role="main">
     <section class="jumbotron text-center">
             <div class="container">
-
+                <div><input [(ngModel)]="texto" placeholder="search text goes here"></div>
+                <div><input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas</div>
                 <a class="btn btn-primary float-right" [routerLink]="['../detalle', -1 ]" >Crear Nueva Fruta</a>
                 <table class="table">
                     <thead>
@@ -19,7 +20,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let fruta of frutas">
+                      <tr *ngFor="let fruta of frutas | filter: texto | filterOferta: oferta">
                         <th scope="row"></th>
                         <td><a [routerLink]="['../detalle', fruta.id ]">{{fruta.nombre}}</a></td>
                         <td>{{fruta.precio}}</td>
@@ -35,4 +36,6 @@
               </div>
     </section>
   </main>
+
+  
   

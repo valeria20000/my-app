@@ -51,7 +51,12 @@ export class ComparadorComponent implements OnInit {
   getTotal(): number{
     let total = 0;
     this.carrito.forEach( el => {
-      total += el.precio * el.cantidad;
+      let precio = el.precio;
+      if(el.oferta){
+        precio = el.precio - (el.precio*el.descuento)/100
+      }
+
+      total += precio * el.cantidad;
     })
     return total;
   }

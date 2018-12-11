@@ -10,8 +10,8 @@ export class FilterPipe implements PipeTransform {
     if(!frutas) return [];
     if(!texto) return frutas;
     texto = texto.toLowerCase();
-return frutas.filter( it => {
-     // return it.toLowerCase().includes(texto);
+return frutas.filter( fruta => {
+     return fruta.nombre.toLowerCase().includes(texto);
     });
    }
 

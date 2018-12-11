@@ -30,6 +30,7 @@ import { BackofficeComponent } from './components/backoffice/backoffice.componen
 import { BackofficeGuard } from './guards/backoffice.guard';
 import { LoginService } from './providers/login.service';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FilterOfertaPipe } from './pipes/filter-oferta.pipe';
 
 
 
@@ -55,7 +56,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     DetalleFrutaComponent,
     LoginComponent,
     BackofficeComponent,
-    FilterPipe
+    FilterPipe,
+    FilterOfertaPipe
 
   ],
   imports: [

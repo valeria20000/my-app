@@ -27,7 +27,7 @@ export class Fruta {
         this._precio = 0;
         this._calorias = 0;
         this._color = [];
-        this.oferta = false;
+        this._oferta = false;
         this._descuento = 0;
         this._img = '';
         this._cantidad = 1;
@@ -65,12 +65,7 @@ export class Fruta {
     public set color(value: string[]) {
         this._color = value;
     }
-    public get oferta(): boolean {
-        return this._oferta;
-    }
-    public set oferta(value: boolean) {
-        this._oferta = value;
-    }
+
     public get descuento(): number {
         return this._descuento;
     }
@@ -90,6 +85,11 @@ export class Fruta {
         this._cantidad = value;
     }
    
-   
+    public get oferta(): boolean {
+        return this._oferta;
+    }
+    public set oferta(value: boolean) {
+        this._oferta = value;
+    }
 
 }

@@ -28,7 +28,7 @@ export class DetalleFrutaComponent implements OnInit {
       precio: new FormControl('', [Validators.required, Validators.min(0.1), Validators.max(999)]),
       calorias: new FormControl('', [Validators.required, Validators.min(0.1), Validators.max(9999)]),
       oferta: new FormControl(false),
-      descuento: new FormControl('5', [Validators.required, Validators.min(5), Validators.max(90)]),
+      descuento: new FormControl('5'),
       img: new FormControl('https://picsum.photos/300/300/?random', [Validators.required, Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')]),
       color: new FormArray([this.crearColorFormGroup(), this.crearColorFormGroup()], Validators.minLength(1))
     });
@@ -83,6 +83,13 @@ export class DetalleFrutaComponent implements OnInit {
     this.formulario.controls.oferta.setValue(fruta.oferta);
     this.formulario.controls.descuento.setValue(fruta.descuento);
     this.formulario.controls.img.setValue(fruta.img);
+    const arrayColores = new FormArray([]) as FormArray;
+
+    this.fruta.color.forEach(c => {
+      arrayColores.push(new FormGroup({colores: new FormControl(c,[Validators.required,Validators.minLength(2),Validators.maxLength(15)])}));
+    });
+
+    this.formulario.setControl('color' , arrayColores);
 
   }
 
@@ -99,8 +106,14 @@ export class DetalleFrutaComponent implements OnInit {
       fruta.descuento = 0;
     }
     fruta.img= this.formulario.controls.img.value;
-    fruta.color = this.formulario.controls.color.value;
-   
+
+    const arrayColores = this.formulario.get('color') as FormArray;
+
+    arrayColores.controls.forEach(color => {
+      const colorFormControl = color.value.colores;
+      fruta.color.push(colorFormControl);
+    });
+
     this.frutaService.add(fruta).subscribe(data => {
       this.mensaje = "Creado correctamente fruta";
       this.resetForm();
@@ -113,7 +126,7 @@ export class DetalleFrutaComponent implements OnInit {
     fruta.id = this.fruta.id;
     fruta.nombre = this.formulario.controls.nombre.value;
     fruta.precio = this.formulario.controls.precio.value;
-    fruta.calorias = this.formulario.controls.calorias.value; 7
+    fruta.calorias = this.formulario.controls.calorias.value; 
     //Si la oferta esta activa aplicamos el descuento caso contrario no 
     fruta.oferta = this.formulario.controls.oferta.value;
     if(this.formulario.controls.oferta.value){
@@ -122,7 +135,12 @@ export class DetalleFrutaComponent implements OnInit {
       fruta.descuento = 0;
     }
     fruta.img= this.formulario.controls.img.value;
-    fruta.color = this.formulario.controls.color.value;
+    const arrayColores = this.formulario.get('color') as FormArray;
+
+    arrayColores.controls.forEach(color => {
+      const colorFormControl = color.value.colores;
+      fruta.color.push(colorFormControl);
+    });
 
     this.frutaService.update(fruta).subscribe(data => {
       console.debug('data %o', data);

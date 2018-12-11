@@ -18,20 +18,17 @@
   },
   "frutas": [
     {
-      "nombre": "banana55",
+      "nombre": "banana",
       "precio": 3.15,
       "calorias": 500,
-      "oferta": true,
-      "descuento": 20,
+      "oferta": false,
+      "descuento": 0,
       "img": "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg",
       "cantidad": 1,
       "color": [
-        {
-          "colores": "verde"
-        },
-        {
-          "colores": "verde"
-        }
+        "amarillo",
+        "verde",
+        "morado"
       ],
       "id": 1
     },
@@ -71,12 +68,8 @@
       "img": "https://png.pngtree.com/element_origin_min_pic/16/10/08/1957f8d8ba650a9.jpg",
       "cantidad": 1,
       "color": [
-        {
-          "colores": "verde"
-        },
-        {
-          "colores": "rojo"
-        }
+        "verde",
+        "rojo"
       ],
       "id": 4
     },
@@ -91,7 +84,7 @@
       ],
       "oferta": true,
       "descuento": 15,
-      "imagen": "http://www.triamax.com/wp-content/uploads/2015/02/uvas.jpg",
+      "img": "http://www.triamax.com/wp-content/uploads/2015/02/uvas.jpg",
       "cantidad": 5,
       "id": 1
     },
@@ -107,7 +100,7 @@
       ],
       "oferta": true,
       "descuento": 10,
-      "imagen": "https://www.hogarmania.com/archivos/201305/melocotones-xl-668x400x80xX.jpg",
+      "img": "https://www.hogarmania.com/archivos/201305/melocotones-xl-668x400x80xX.jpg",
       "cantidad": 5,
       "id": 2
     },
@@ -122,7 +115,7 @@
       ],
       "oferta": false,
       "descuento": 0,
-      "imagen": "https://www.webconsultas.com/sites/default/files/styles/encabezado_articulo/public/migrated/melon.jpg",
+      "img": "https://www.webconsultas.com/sites/default/files/styles/encabezado_articulo/public/migrated/melon.jpg",
       "cantidad": 5,
       "id": 3
     },
@@ -137,7 +130,7 @@
       ],
       "oferta": false,
       "descuento": 0,
-      "imagen": "https://www.comenaranjas.com/images/stories/virtuemart/product/sandia-rayada.jpg",
+      "img": "https://www.comenaranjas.com/images/stories/virtuemart/product/sandia-rayada.jpg",
       "cantidad": 5,
       "id": 4
     },
@@ -152,7 +145,7 @@
       ],
       "oferta": true,
       "descuento": 5,
-      "imagen": "https://www.hogarmania.com/archivos/201307/albaricoque3-xl-668x400x80xX.jpg",
+      "img": "https://www.hogarmania.com/archivos/201307/albaricoque3-xl-668x400x80xX.jpg",
       "cantidad": 5,
       "id": 5
     },
@@ -167,9 +160,37 @@
       ],
       "oferta": false,
       "descuento": 0,
-      "imagen": "https://www.abc.es/media/sociedad/2016/08/05/agua-coco-propiedades2-kfwC--620x349@abc.jpg",
+      "img": "https://www.abc.es/media/sociedad/2016/08/05/agua-coco-propiedades2-kfwC--620x349@abc.jpg",
       "cantidad": 5,
       "id": 6
+    },
+    {
+      "nombre": "adsas",
+      "precio": 3,
+      "calorias": 3,
+      "color": [
+        "verde",
+        "rojo",
+        "morado"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://www.frutadelasarga.com/server/Portal_0008706/img/categories/Naranja.jpg",
+      "id": 10
+    },
+    {
+      "nombre": "Fruta de la Pasión",
+      "precio": 3,
+      "calorias": 3,
+      "oferta": true,
+      "descuento": 23,
+      "img": "https://www.frutadelasarga.com/server/Portal_0008706/img/categories/Naranja.jpg",
+      "cantidad": 1,
+      "color": [
+        "verde",
+        "verde"
+      ],
+      "id": 11
     }
   ]
 }

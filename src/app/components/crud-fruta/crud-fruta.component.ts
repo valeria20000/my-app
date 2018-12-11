@@ -12,7 +12,7 @@ export class CrudFrutaComponent implements OnInit {
   frutas: Fruta[];
   
 
-  constructor(public frutaService: FrutaService, private route: ActivatedRoute) {
+  constructor(public frutaService: FrutaService, public route: ActivatedRoute) {
     this.frutas = [];
    }
 
@@ -23,6 +23,7 @@ export class CrudFrutaComponent implements OnInit {
 
     this.frutaService.getAll().subscribe(data =>{
       this.frutas = data.map( el => el);
+      console.log(this.frutas);
     });
     
   }
