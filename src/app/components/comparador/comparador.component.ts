@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
 
+
 @Component({
   selector: 'app-comparador',
   templateUrl: './comparador.component.html',
@@ -17,6 +18,8 @@ export class ComparadorComponent implements OnInit {
   carrito: Fruta[];
 
 
+
+
   //FrutaService es @Injectable por el cual debemos declararlo en el constuctor , nunca haremos new y no usarlo dentro del constructoe mejor en el ngOninit
   constructor( public frutaService: FrutaService) {
    
@@ -25,6 +28,7 @@ export class ComparadorComponent implements OnInit {
     this.carrito = [];
     this.frutas = [];
     this.total = 0;
+
 
 
   }

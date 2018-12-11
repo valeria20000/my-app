@@ -3,6 +3,13 @@
         <div class="container ">
 
             <div class="row">
+
+                    <input [(ngModel)]="texto" placeholder="search text goes here">
+                    <ul>
+                      <li *ngFor="let p of productos | filter : texto">
+                        {{c}}
+                      </li>
+                    </ul>
               
                
             </div>

@@ -13,44 +13,44 @@
           <hr />
           <!-- Impotante desactivar las validacion en html5 -->
           <form class="form" [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label" for="nombre">Nombre:</label>
-              <div class="col-lg-9">
-                <input type="text" formControlName="nombre" class="from-control" />
+              <div class="col">
+                <input type="text" formControlName="nombre" class="from-control col-10" />
                 <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 50 Letras.</small>
-                <small *ngIf="formulario.controls.nombre.valid" class="form-text text-succes" >Correcto</small>
+                <small *ngIf="formulario.controls.nombre.valid" class="form-text text-success" >Correcto</small>
               </div>
             </div>
 
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label form-control-label" for="precio"> Precio: </label>
-             <div class="col-lg-9">
-                <input type="number" formControlName="precio" class="from-control" min="0.1" max="999" step="0.1"/>
-                <small *ngIf="formulario.controls.precio.invalid && formulario.controls.precio.touched" class="form-text text-danger">Minimo 0.1 numero y Maximo 999 numeros.</small>
-                <small *ngIf="formulario.controls.precio.valid" class="from-text text-success">Correcto</small>
-            </div>
-         </div>
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label" for="precio"> Precio: </label>
+            <div class="col">
+                <input type="number" formControlName="precio" class="from-control col-10" min="0.1" max="999" step="0.1" />
+                <small *ngIf=" formulario.controls.precio.invalid && formulario.controls.precio.touched" class="form-text text-danger">Minimo 0.1 numero y Maximo 999 numeros.</small>
+                <small *ngIf="formulario.controls.precio.valid" class="form-text text-success">Correcto</small>
+            </div>  
+        </div>
 
          <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label" for="calorias"> Calorias: </label>
-            <div class="col-lg-9">
-                <input type="number" formControlName="calorias" class="from-control" min="0.1" max="9999" step="0.1" />
+            <div class="col">
+                <input type="number" formControlName="calorias" class="from-control col-10" min="0.1" max="9999" step="0.1" />
                 <small *ngIf=" formulario.controls.calorias.invalid && formulario.controls.calorias.touched" class="form-text text-danger">Minimo 0.1 numero y Maximo 9999 numeros.</small>
-                <small *ngIf="formulario.controls.calorias.valid" class="form-text text-succes">Correcto</small>
+                <small *ngIf="formulario.controls.calorias.valid" class="form-text text-success">Correcto</small>
             </div>  
         </div>
 
         <div class="form-group row">
+        
                 <label  class="col-lg-3 col-form-label form-control-label">Colores</label>
-                <button (click)="nuevoColor()">Nuevo</button>
+                <i class="fas fa-plus-square" (click)="nuevoColor()" >  </i>
+        
                 <div formArrayName="color">
                   <div *ngFor="let colores of formulario.get('color').controls; let i = index">
                     <div [formGroupName]="i">
-                      <input formControlName="colores" />
-                      <button (click)="eliminarColor(i)">Eliminar</button>
-                      <!--
-                        <small *ngIf="formulario.get('colores').controls[i].invalid" class="form-text text-danger">Minimo 2 letras maximo 15</small>
-                      -->
+                      <input formControlName="colores" /> 
+                      <i class="fas fa-minus-circle" (click)="eliminarColor(i)"></i>
                     </div>
                   </div>
                 </div>
@@ -67,13 +67,14 @@
                 <label for="descuento"> Descuento: </label>
                 <input type="number" formControlName="descuento" class="from-control" min="5" max="90" step="5"/>
                 <small *ngIf="formulario.controls.descuento.invalid && formulario.controls.descuento.touched" class="form-text text-danger">Minimo 5 numeros y Maximo 90 numeros.</small>
-                <small *ngIf="formulario.controls.descuento.valid" class="form-text text-succes">Correcto</small>
+                <small *ngIf="formulario.controls.descuento.valid" class="form-text text-success">Correcto</small>
               </div>
         </div>
 
         <div class="form-group row">
+ 
+            <div class="input-group">
               <label  class="col-lg-3 col-form-label form-control-label"  for="img"> Imagen: </label>
-              <div>
               <img src="{{formulario.controls.img.value}}" alt="imagen destacada" class="/"/>
             </div>
             
@@ -81,9 +82,9 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon3">IMAGEN URL</span>
                 </div>
-                <input type="text" class="form-control" formControlName="img" placeholder="url imagen con extension png, jpg, jpeg" id="basic-url" aria-describedby="basic-addon3"><br>
-                <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small><br>
-                <small *ngIf="formulario.controls.img.valid" class="form-text text-succes" >Correcto</small>  
+                  <input type="text" class="form-control" formControlName="img" placeholder="url imagen con extension png, jpg, jpeg" id="basic-url" aria-describedby="basic-addon3"><br>
+                  <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small>
+                  <small *ngIf="formulario.controls.img.valid" class="form-text text-success" >Correcto</small>  
               </div>
 
             <input type="submit" [disabled]="formulario.status==='INVALID'" *ngIf="fruta.id > 0" value="modificar"  class="btn btn-success" />
