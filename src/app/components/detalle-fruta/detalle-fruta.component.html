@@ -73,17 +73,25 @@
 
         <div class="form-group row">
               <label  class="col-lg-3 col-form-label form-control-label"  for="img"> Imagen: </label>
+              <div>
               <img src="{{formulario.controls.img.value}}" alt="imagen destacada" class="/"/>
-              <input type="text" formControlName="img" class="from-control" placeholder="url imagen con extension png, jpg, jpeg"/>
-              <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small>
-              <small *ngIf="formulario.controls.img.valid" class="form-text text-succes" >Correcto</small>
-           
+            </div>
+            
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">IMAGEN URL</span>
+                </div>
+                <input type="text" class="form-control" formControlName="img" placeholder="url imagen con extension png, jpg, jpeg" id="basic-url" aria-describedby="basic-addon3"><br>
+                <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small><br>
+                <small *ngIf="formulario.controls.img.valid" class="form-text text-succes" >Correcto</small>  
+              </div>
 
             <input type="submit" [disabled]="formulario.status==='INVALID'" *ngIf="fruta.id > 0" value="modificar"  class="btn btn-success" />
             <input type="submit" [disabled]="formulario.status==='INVALID'" *ngIf="fruta.id < 0" value="crear"  class="btn btn-success" />
-
-         
         </div>
+
+
+
           </form>
         </div>
       </div>

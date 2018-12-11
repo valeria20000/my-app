@@ -18,15 +18,20 @@
   },
   "frutas": [
     {
-      "nombre": "banana",
+      "nombre": "banana5",
       "precio": 3.15,
       "calorias": 500,
       "oferta": true,
       "descuento": 20,
       "img": "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg",
+      "cantidad": 1,
       "color": [
-        "amarillo",
-        "negro"
+        {
+          "colores": "verde"
+        },
+        {
+          "colores": "verde"
+        }
       ],
       "id": 1
     },

@@ -13,10 +13,16 @@
         <a class="nav-link"[routerLink] = "['crud']">Listado Frutas</a>
       </li>  
       </ul>
-      
 <app-login></app-login> 
     </div>
   </nav>
+
+  <ul>
+    <li *ngFor="let c of characters">
+      {{c}}
+    </li>
+  </ul>
+  
 </main>
 
 
