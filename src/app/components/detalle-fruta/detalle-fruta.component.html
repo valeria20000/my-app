@@ -8,8 +8,8 @@
     <div class="col-12 col-sm-8 col-md-6 mx-auto">
       <div id="pay-invoice" class="card">
         <div class="card-body">
-            <div class="card-title"><h2 class="text-center" *ngIf = "id == -1">Crear Fruta</h2></div>
-          <div class="card-title"><h2 class="text-center" *ngIf="id > 0">Modificar {{fruta.nombre}}</h2></div>
+            <div class="card-title"><h2 class="text-center" *ngIf="fruta.id < 0">Crear Fruta</h2></div>
+          <div class="card-title"><h2 class="text-center" *ngIf="fruta.id > 0"  >Modificar {{fruta.nombre}}</h2></div>
           <hr />
           <!-- Impotante desactivar las validacion en html5 -->
           <form class="form" [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
