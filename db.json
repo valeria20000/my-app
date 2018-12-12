@@ -18,62 +18,6 @@
   },
   "frutas": [
     {
-      "nombre": "banana",
-      "precio": 3.15,
-      "calorias": 500,
-      "oferta": false,
-      "descuento": 0,
-      "img": "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg",
-      "cantidad": 1,
-      "color": [
-        "amarillo",
-        "verde",
-        "morado"
-      ],
-      "id": 1
-    },
-    {
-      "nombre": "pera",
-      "precio": 2,
-      "calorias": 350,
-      "oferta": false,
-      "descuento": 10,
-      "img": "http://www.haciendasbio.com/63-large_default/peras.jpg",
-      "color": [
-        "amarillo",
-        "verde"
-      ],
-      "id": 2
-    },
-    {
-      "nombre": "fresa",
-      "precio": 0.75,
-      "calorias": 100,
-      "oferta": true,
-      "descuento": 5,
-      "img": "http://asipasa.com/media/i/17d1b48e-554a-11e2-8fa7-3c4a92dfe5a8.jpg",
-      "color": [
-        "rosa",
-        "rojo",
-        "verde"
-      ],
-      "id": 3
-    },
-    {
-      "nombre": "Pera3",
-      "precio": 2,
-      "calorias": 1,
-      "oferta": true,
-      "descuento": 10,
-      "img": "https://png.pngtree.com/element_origin_min_pic/16/10/08/1957f8d8ba650a9.jpg",
-      "cantidad": 1,
-      "color": [
-        "verde",
-        "rojo"
-      ],
-      "id": 4
-    },
-    {
       "nombre": "uva",
       "precio": 0.6,
       "calorias": 2,
@@ -165,32 +109,161 @@
       "id": 6
     },
     {
-      "nombre": "adsas",
+      "nombre": "Naranja",
       "precio": 3,
       "calorias": 3,
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://www.frutadelasarga.com/server/Portal_0008706/img/categories/Naranja.jpg",
+      "cantidad": 1,
       "color": [
         "verde",
         "rojo",
         "morado"
       ],
-      "oferta": false,
-      "descuento": 0,
-      "img": "https://www.frutadelasarga.com/server/Portal_0008706/img/categories/Naranja.jpg",
       "id": 10
     },
     {
-      "nombre": "Fruta de la Pasión",
-      "precio": 3,
-      "calorias": 3,
-      "oferta": true,
-      "descuento": 23,
-      "img": "https://www.frutadelasarga.com/server/Portal_0008706/img/categories/Naranja.jpg",
-      "cantidad": 1,
+      "nombre": "Platano",
+      "precio": 2,
+      "calorias": 150,
       "color": [
-        "verde",
+        "amarillo",
         "verde"
       ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://www.heb.com.mx/media/catalog/product/cache/20/image/d954a60aa48ef57022b0eb878e93bc1f/P/l/23967_419195752.jpg",
       "id": 11
+    },
+    {
+      "nombre": "Fresa",
+      "precio": 2,
+      "calorias": 200,
+      "color": [
+        "rojo",
+        "verde"
+      ],
+      "oferta": true,
+      "descuento": 10,
+      "img": "https://www.specialfruit.com/es/thumbnail/productFull/product-1456739596/fresa-calinda.jpg",
+      "id": 12
+    },
+    {
+      "nombre": "Mandarina",
+      "precio": 1.4,
+      "calorias": 200,
+      "color": [
+        "amarillo",
+        "verde"
+      ],
+      "oferta": true,
+      "descuento": "5",
+      "img": "https://greenshop.com.ar/wp-content/uploads/sites/13/2016/08/A.2.29-500GR.jpg",
+      "id": 13
+    },
+    {
+      "nombre": "Limon",
+      "precio": 3,
+      "calorias": 50,
+      "color": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://engorda.org/wp-content/uploads/2018/01/limon-engorda.jpg",
+      "id": 14
+    },
+    {
+      "nombre": "Mango",
+      "precio": 4,
+      "calorias": 400,
+      "color": [
+        "naranja",
+        "verde"
+      ],
+      "oferta": true,
+      "descuento": 20,
+      "img": "https://i5.walmartimages.ca/images/Large/188/9_r/6000191271889_R.jpg",
+      "id": 15
+    },
+    {
+      "nombre": "Pitahaya",
+      "precio": 5,
+      "calorias": 200,
+      "color": [
+        "rojo",
+        "verde",
+        "amarillo",
+        "naranja"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "http://vivergil.es/2364-large_default/pitayapitahaya-hylocereus-undatus-c-10.jpg",
+      "id": 16
+    },
+    {
+      "nombre": "kiwi",
+      "precio": 3,
+      "calorias": 150,
+      "color": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://www.zespri.eu/_img/kiwi/kiwi-green.png",
+      "id": 17
+    },
+    {
+      "nombre": "Papaya",
+      "precio": 5,
+      "calorias": 300,
+      "oferta": true,
+      "descuento": 30,
+      "img": "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic.jpg",
+      "cantidad": 1,
+      "color": [
+        "amarillo",
+        "verde"
+      ],
+      "id": 18
+    },
+    {
+      "nombre": "Guama",
+      "precio": 8.5,
+      "calorias": 450,
+      "color": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://st2.depositphotos.com/6922808/9863/i/950/depositphotos_98630256-stock-photo-guama-delicious-tropical-fruit.jpg",
+      "id": 19
+    },
+    {
+      "nombre": "Achotillo",
+      "precio": 3.25,
+      "calorias": 120,
+      "color": [
+        "rojo",
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://casasdeplayacr.com/wp-content/uploads/2014/10/7.jpg",
+      "id": 20
+    },
+    {
+      "nombre": "Chirimoya",
+      "precio": 5.82,
+      "calorias": 343,
+      "color": [
+        "verde"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "img": "https://www.fuentesaludable.com/zuimg12/wp-content/uploads/2018/3/chirimoya.jpg",
+      "id": 21
     }
   ]
 }

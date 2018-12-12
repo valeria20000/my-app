@@ -2,7 +2,6 @@ export class Fruta {
 
     private _id: number;
     
-
     private _nombre: string;
     
     private _precio: number;

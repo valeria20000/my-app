@@ -1,7 +1,7 @@
 <main role="main">
     <section class="jumbotron text-center">
             <div class="container">
-                <div><input [(ngModel)]="texto" placeholder="search text goes here"></div>
+                <div>Bucador: <input [(ngModel)]="texto" placeholder="Inserte nombre fruta"></div>
                 <div><input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas</div>
                 <a class="btn btn-primary float-right" [routerLink]="['../detalle', -1 ]" >Crear Nueva Fruta</a>
                 <table class="table">
@@ -12,22 +12,22 @@
                         <th scope="col">Precio</th>
                         <th scope="col">Calorias</th>
                         <th scope="col">Oferta</th>
-                        <th scope="col">Img</th>
                         <th scope="col">Descuento</th>
-                        <th scope="col">Color</th>
+                        <!--<th scope="col">Color</th>-->
+                        <th scope="col">Img</th>
                         <th scope="col">Accion</th>
                       
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let fruta of frutas | filter: texto | filterOferta: oferta">
+                      <tr destacar *ngFor="let fruta of frutas | filter: texto | filterOferta: oferta">
                         <th scope="row"></th>
                         <td><a [routerLink]="['../detalle', fruta.id ]">{{fruta.nombre}}</a></td>
-                        <td>{{fruta.precio}}</td>
-                        <td>{{fruta.calorias}}</td>
+                        <td>{{fruta.precio}} €</td>
+                        <td>{{fruta.calorias}} Kcal</td>
                         <td>{{fruta.oferta}}</td>
-                        <td>{{fruta.descuento}}</td>
-                        <td>{{fruta.color}}</td>
+                        <td>{{fruta.descuento}} %</td>
+                        <!--<td>{{fruta.color}}</td>-->
                         <td><img src="{{fruta.img}}" alt="imagen destacada" class="imagenEstilo"/></td>
                         <td> <i class="fas fa-trash-alt text-danger" (click)= "eliminar(fruta.id)"></i></td>
                       </tr>
