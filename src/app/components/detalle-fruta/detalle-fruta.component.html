@@ -18,7 +18,7 @@
               <label class="col-lg-3 col-form-label form-control-label" for="nombre">Nombre:</label>
               <div class="col">
                 <input type="text" formControlName="nombre" class="from-control col-10" />
-                <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 50 Letras.</small>
+                <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 100 Letras.</small>
                 <small *ngIf="formulario.controls.nombre.valid" class="form-text text-success" >Correcto</small>
               </div>
             </div>
@@ -51,6 +51,7 @@
                     <div [formGroupName]="i">
                       <input formControlName="colores" /> 
                       <i class="fas fa-minus-circle" (click)="eliminarColor(i)"></i>
+                      <small *ngIf=" formulario.controls.color.invalid && formulario.controls.color.touched" class="form-text text-danger">Minimo 1 caracter</small>
                     </div>
                   </div>
                 </div>
@@ -66,8 +67,6 @@
               <div [hidden]="!formulario.controls.oferta.value" class="form-group col-md-4" >
                 <label for="descuento"> Descuento: </label>
                 <input type="number" formControlName="descuento" class="from-control" min="5" max="90" step="5"/>
-                <small *ngIf="formulario.controls.descuento.invalid && formulario.controls.descuento.touched" class="form-text text-danger">Minimo 5 numeros y Maximo 90 numeros.</small>
-                <small *ngIf="formulario.controls.descuento.valid" class="form-text text-success">Correcto</small>
               </div>
         </div>
 

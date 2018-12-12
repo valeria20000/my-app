@@ -17,8 +17,9 @@
             
                 <div class="row justify-content-center">
                         <div class="col-2">
-                                <ul class="list-group">
-                                    <li *ngFor="let f of frutas | filter : texto | filterOferta: oferta" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>         
+                                <ul class="list-group lista">
+                                    <li *ngFor="let f of frutas | filter : texto | filterOferta: oferta" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>     
+                                    <li *ngIf = "(frutas | filter: texto).length === 0">No hay frutas</li>
                                   </ul>
                             </div>
                     <div class="col-4"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
@@ -34,7 +35,7 @@
                         <li *ngFor="let p of carrito, let i = index" class="list-group-item">
                             <span (click)="eliminarProducto(p,i)" class="badge badge-danger float-right">X</span>
                             <p>
-                                <img src="{{p.img}}" alt="imagen de la fruta {{ p.nombre }}">
+                                <img class="imag-carrito" src="{{p.img}}" alt="imagen de la fruta {{ p.nombre }}">
                                 <span class="nombre">{{ p.nombre }}</span><br>
                                 <span class="precio" *ngIf="!p.oferta">{{p.precio}} $</span>
                                 <span class="precio" *ngIf="p.oferta"><del>{{p.precio}}</del> {{(p.precio - (p.precio*p.descuento)/100 | number:'1.2-2')}} $</span>

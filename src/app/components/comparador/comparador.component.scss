@@ -1,9 +1,20 @@
 .table{
     width: 50%;
 }
-img {
-    vertical-align: super;
-    border-style: outset;
-    max-block-size: 98px;
-}
 
+img {
+        vertical-align: bottom;
+        max-width: 286px;
+        max-height: 171px;
+    }
+
+.lista{
+    max-height: 460px;
+    overflow-y: auto;
+}
+.imag-carrito{
+    vertical-align: bottom;
+        max-width: 286px;
+        max-height: 65px;
+
+}

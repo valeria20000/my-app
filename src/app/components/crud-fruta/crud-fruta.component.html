@@ -26,18 +26,21 @@
                     </thead>
                     <tbody>
                       <tr destacar *ngFor="let fruta of frutas | filter: texto | filterOferta: oferta">
+        
                         <th scope="row"></th>
                         <td><a [routerLink]="['../detalle', fruta.id ]">{{fruta.nombre}}</a></td>
                         <td>{{fruta.precio}} €</td>
                         <td>{{fruta.calorias}} Kcal</td>
-                        <td>{{fruta.oferta}}</td>
+                        <td>{{fruta.oferta?'si':'no'}}</td>
                         <td>{{fruta.descuento}} %</td>
                         <!--<td>{{fruta.color}}</td>-->
                         <td><img src="{{fruta.img}}" alt="imagen destacada" class="imagenEstilo"/></td>
                         <td> <i class="fas fa-trash-alt text-danger" (click)= "eliminar(fruta.id)"></i></td>
                       </tr>
+
                     </tbody>
                   </table>
+                  <p *ngIf = "(frutas | filter: texto).length === 0" class="text-danger">No hay frutas</p>
             </div>
               </div>
     </section>

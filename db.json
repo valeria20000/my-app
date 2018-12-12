@@ -34,18 +34,18 @@
     },
     {
       "nombre": "melocoton",
-      "precio": 45,
+      "precio": 4,
       "calorias": 34,
+      "oferta": true,
+      "descuento": 10,
+      "img": "https://www.hogarmania.com/archivos/201305/melocotones-xl-668x400x80xX.jpg",
+      "cantidad": 1,
       "color": [
         "amarillo",
         "verde",
         "naranja",
         "rojo"
       ],
-      "oferta": true,
-      "descuento": 10,
-      "img": "https://www.hogarmania.com/archivos/201305/melocotones-xl-668x400x80xX.jpg",
-      "cantidad": 5,
       "id": 2
     },
     {
