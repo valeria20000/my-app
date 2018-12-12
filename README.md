@@ -14,6 +14,6 @@ Para arrancar el db.json donde se encuentra el listado de frutas,  en el cmd ins
 ## Servidor
 Ejecutar ng para un servidor de desarrollo. Vaya a http: // localhost: 4200 /. La aplicación se volverá a cargar automáticamente si cambia alguno de los archivos de origen.
 
-![alt text](src/assets/index.png)
+![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/index.png)
 
-![Alt text](src/assets/index.png)
+
