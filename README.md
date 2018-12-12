@@ -1,4 +1,4 @@
-# MyApp
+# Proyecto Frutas
 
 + Proyecto realizado con Angular 2 , incluye carrito de la compra
 + Filtros de busqueda según nombre fruta y si esta en oferta 
