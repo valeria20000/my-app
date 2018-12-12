@@ -1,9 +1,9 @@
 # MyApp
 
-Proyecto realizado con Angular 2 , incluye carrito de la compra
-Filtros de busqueda según nombre fruta y si esta en oferta 
-Zona Publica: Muestra un conparador para el usuario en el que incluye carrito de la compra.
-Zona Privada : Muestra una lista de frutas en el cual se puede modificar , crear y eliminar fruta
++ Proyecto realizado con Angular 2 , incluye carrito de la compra
++ Filtros de busqueda según nombre fruta y si esta en oferta 
++ Zona Publica: Muestra un conparador para el usuario en el que incluye carrito de la compra.
++ Zona Privada : Muestra una lista de frutas en el cual se puede modificar , crear y eliminar fruta
 
 ## Prequisitos
 
