@@ -7,12 +7,12 @@
 
 ## Prequisitos
 
-npm install para descargar todas las librerias necesarias en node_modules.
-Para arrancar el db.json donde se encuentra el listado de frutas,  en el cmd insertar el siquiente comando json-server --watch db.json
++ npm install para descargar todas las librerias necesarias en node_modules.
++ Para arrancar el db.json donde se encuentra el listado de frutas,  en el cmd insertar el siquiente comando json-server --watch db.json
 
 
 ## Servidor
-Ejecutar ng para un servidor de desarrollo. Vaya a http: // localhost: 4200 /. La aplicación se volverá a cargar automáticamente si cambia alguno de los archivos de origen.
++ Ejecutar ng para un servidor de desarrollo. Vaya a http: // localhost: 4200 /. La aplicación se volverá a cargar automáticamente si + cambia alguno de los archivos de origen.
 
 ![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/index.png)
 
