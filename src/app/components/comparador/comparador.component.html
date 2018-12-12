@@ -3,15 +3,20 @@
         <div class="container ">
 
             <div class="row">
+                <div class="col-3">
 
-                    <input [(ngModel)]="texto" placeholder="search text goes here">
+                   Buscador :  <input [(ngModel)]="texto" placeholder="Inserte el nombre de la fruta">
+                </div>
+                   <div class="col-3 ">
+                   <input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas
+                </div>
               
                
             </div>
-            <div><input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas</div>
+ 
             
                 <div class="row justify-content-center">
-                        <div class="col-3">
+                        <div class="col-2">
                                 <ul class="list-group">
                                     <li *ngFor="let f of frutas | filter : texto | filterOferta: oferta" (click)="seleccionar(f)" class="list-group-item" [class.active]="f == f1 || f == f2" >{{f.nombre}}</li>         
                                   </ul>
@@ -19,7 +24,7 @@
                     <div class="col-4"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
                     <div class="col-4"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra) = "actualizarCarro($event)" ></app-fruta-card></div>
                     
-                </div>
+        
 
 
                 <div class="col-2 carrito">
@@ -48,6 +53,7 @@
                         </li>
                     </ul>
                    </div> 
+                </div>
             </div>            
     </section>
 
