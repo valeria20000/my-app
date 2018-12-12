@@ -264,6 +264,34 @@
       "descuento": 0,
       "img": "https://www.fuentesaludable.com/zuimg12/wp-content/uploads/2018/3/chirimoya.jpg",
       "id": 21
+    },
+    {
+      "nombre": "Maracuya",
+      "precio": 4.98,
+      "calorias": 349,
+      "oferta": true,
+      "descuento": 50,
+      "img": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Maracuy%C3%A1.jpg",
+      "cantidad": 1,
+      "color": [
+        "verde",
+        "amarillo"
+      ],
+      "id": 22
+    },
+    {
+      "nombre": "Manzana",
+      "precio": 1.46,
+      "calorias": 25,
+      "oferta": true,
+      "descuento": 60,
+      "img": "https://www.fuentesaludable.com/wp-content/uploads/2016/12/manzana-energia.jpg",
+      "cantidad": 1,
+      "color": [
+        "verde",
+        "roja"
+      ],
+      "id": 23
     }
   ]
 }

@@ -1,9 +1,14 @@
 <main role="main">
     <section class="jumbotron text-center">
             <div class="container">
-                <div>Bucador: <input [(ngModel)]="texto" placeholder="Inserte nombre fruta"></div>
+                <div col-2>
+                    <a class="btn btn-primary float-right" [routerLink]="['../detalle', -1 ]" >Crear Nueva Fruta</a>
+                  </div>
+
+                <div> <input [(ngModel)]="texto" placeholder="Inserte nombre fruta"><i class="fas fa-search"> </i></div>
                 <div><input type="checkbox" [(ngModel)]="oferta"> Solo Ofertas</div>
-                <a class="btn btn-primary float-right" [routerLink]="['../detalle', -1 ]" >Crear Nueva Fruta</a>
+   
+            <div class="table-wrapper-scroll-y">
                 <table class="table">
                     <thead>
                       <tr>
@@ -33,6 +38,7 @@
                       </tr>
                     </tbody>
                   </table>
+            </div>
               </div>
     </section>
   </main>
