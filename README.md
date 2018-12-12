@@ -17,3 +17,12 @@
 ![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/index.png)
 
 
+## ZONA PRIVADA
+![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/lista.png)
+
+![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/modificar.png)
+
+![alt text](https://raw.githubusercontent.com/valeria20000/proyectoFrutas/master/src/assets/img/crear.png)
+
+
+
